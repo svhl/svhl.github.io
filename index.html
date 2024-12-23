@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Suhail's Portfolio</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div class="container">
+			<h1>Hi, I'm Suhail!</h2>
+
+			<div class="tabs">
+				<div class="tab active" onclick="showSection('about', this)">
+					About
+				</div>
+				<div class="tab" onclick="showSection('skills', this)">
+					Skills
+				</div>
+				<div class="tab" onclick="showSection('projects', this)">
+					Projects
+				</div>
+			</div>
+
+			<div id="about" class="content-section">
+				<p class="intro">I am a computer science student currently pursuing B.Tech at Rajagiri School of Engineering and Technology.</p>
+                <p class="animate">I'm in my third year, but I've been tinkering with code wayyy before that. I love making my ideas come to life using technology.</p>
+				<p class="looking">Right now, I'm looking for interships to futher develop my skills.</p>
+				<p class="contact">You can contact me by clicking on the icon of your preferred platform below!</p>
+			</div>
+			<div id="skills" class="content-section">
+				<p>Skills content goes here.</p>
+			</div>
+			<div id="projects" class="content-section">
+				<p>Projects content goes here.</p>
+			</div>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
