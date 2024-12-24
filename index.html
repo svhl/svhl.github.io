@@ -7,39 +7,44 @@
 		<link rel="stylesheet" href="styles.css" />
 	</head>
 	<body>
-		<div class="container">
-			<h1>Hi, I'm Suhail!</h2>
+		<div class="bg">
+			<div class="container">
+				<h1>Hi, I'm Suhail!</h2>
 
-			<div class="tabs">
-				<div class="tab active" onclick="showSection('about', this)">
-					About
+				<div class="tabs">
+					<div class="tab active" onclick="showSection('about', this)">
+						About
+					</div>
+					<div class="tab" onclick="showSection('skills', this)">
+						Skills
+					</div>
+					<div class="tab" onclick="showSection('projects', this)">
+						Projects
+					</div>
 				</div>
-				<div class="tab" onclick="showSection('skills', this)">
-					Skills
-				</div>
-				<div class="tab" onclick="showSection('projects', this)">
-					Projects
-				</div>
-			</div>
 
-			<div id="about" class="content-section">
-				<p class="content-sub">I am a computer science student currently pursuing B.Tech at Rajagiri School of Engineering and Technology.</p>
-                <p class="content-sub">I'm in my third year, but I've been tinkering with code wayyy before that. I love making my ideas come to life using technology.</p>
-				<p class="content-sub">Right now, I'm looking for interships to futher develop my skills.</p>
-				<p class="content-sub">You can contact me by clicking on the icon of your preferred platform below!</p>
-			</div>
-			<div id="skills" class="content-section">
-				<p>Skills content goes here.</p>
-			</div>
-			<div id="projects" class="content-section">
-				<p>Projects content goes here.</p>
+				<div id="about" class="content-section">
+					<p class="content-sub1">I am a computer science student currently pursuing B.Tech at Rajagiri School of Engineering and Technology.</p>
+					I'm in my third year, but I've been tinkering with code 
+					<span class="wave">
+						<span>w</span><span>a</span><span>y</span><span>y</span><span>y</span>
+					</span> before that. I love making my ideas come to life using technology.
+					<p class="content-sub2">Right now, I'm looking for interships to implement and futher develop my skills.</p>
+					<p class="content-sub1">You can reach out to me through your favorite platform by clicking one of the icons below!</p>
+				</div>
+				<div id="skills" class="content-section">
+					<p>Skills content goes here.</p>
+				</div>
+				<div id="projects" class="content-section">
+					<p>Projects content goes here.</p>
+				</div>
 			</div>
 		</div>
 
 		<footer class="footer">
 			<p>&copy; 2024 Muhammed S. Suhail. All rights reserved.</p>
-		</footer>		
-
+		</footer>
+		
 		<script src="script.js"></script>
 	</body>
 </html>
