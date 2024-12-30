@@ -20,3 +20,24 @@ function showSection(sectionId, tabElement) {
 	});
 	tabElement.classList.add("active");
 }
+
+// Update the year in the footer
+document.getElementById("current-year").textContent = new Date().getFullYear();
+
+document
+	.getElementById("email-icon")
+	.addEventListener("click", function (event) {
+		event.preventDefault(); // Prevent the default mailto behavior
+
+		const email = "muhammeds.suhail@gmail.com";
+
+		// Copy email to clipboard
+		navigator.clipboard.writeText(email).then(function () {
+			const popup = document.getElementById("copy-popup");
+			popup.classList.add("show");
+
+			setTimeout(function () {
+				popup.classList.remove("show");
+			}, 2000);
+		});
+	});
