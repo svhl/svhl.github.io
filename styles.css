@@ -64,6 +64,7 @@ h1 {
 	padding-left: 5.8em;
 	padding-right: 5.8em;
 	font-size: 1.1em;
+	font-family: "Roboto Condensed", sans-serif;
 }
 
 .content-sub1 {
@@ -173,7 +174,8 @@ h1 {
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%) translateY(-50px);
-	font-size: 14px;
+	font-size: 0.8em;
+	font-family: "Poppins", sans-serif;
 }
 
 .copy-popup.show {
