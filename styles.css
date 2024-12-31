@@ -38,6 +38,7 @@ h1 {
 	justify-content: center;
 	gap: 1em;
 	margin-top: 3em;
+	z-index: 1;
 	position: sticky;
 	top: 1em;
 }
