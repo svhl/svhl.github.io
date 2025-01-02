@@ -41,3 +41,24 @@ document
 			}, 2000);
 		});
 	});
+
+const nameText = document.getElementById("nameText");
+
+// Function to toggle text with fade effect on click when screen width is below 675px
+nameText.addEventListener("click", function () {
+	nameText.classList.add("fade-out"); // Add fade-out effect
+
+	// Wait for the fade-out transition to finish before changing text
+	setTimeout(function () {
+		if (nameText.innerText === "Hi, I'm Suhail!") {
+			nameText.innerText = "Hi, I'm svhl!"; // Change text on click
+			nameText.classList.add("fira-code");
+		} else {
+			nameText.innerText = "Hi, I'm Suhail!"; // Revert text on another click
+			nameText.classList.remove("fira-code");
+		}
+
+		nameText.classList.remove("fade-out"); // Remove fade-out effect
+		nameText.classList.add("fade-in"); // Add fade-in effect
+	}, 300); // Matches the duration of the opacity transition (0.3s)
+});
