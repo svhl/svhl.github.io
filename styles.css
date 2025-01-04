@@ -47,12 +47,12 @@ h1:hover {
 }
 
 h1.fade-out {
-	opacity: 0; /* Fade out original text */
+	opacity: 0;
 	transition: opacity 0.1s ease;
 }
 
 h1.fade-in::after {
-	opacity: 1; /* Fade in new text */
+	opacity: 1;
 	transition: opacity 0.1s ease;
 }
 
@@ -91,13 +91,40 @@ h1.fade-in::after {
 	font-family: "Roboto Condensed", sans-serif;
 }
 
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.content-section p {
+	opacity: 0;
+}
+
 .content-sub1 {
-	padding-bottom: 1em;
+	padding-bottom: 1.5em;
+	animation: fadeIn 0.5s ease forwards;
 }
 
 .content-sub2 {
-	padding-bottom: 1em;
-	padding-top: 1.1em;
+	animation: fadeIn 0.5s ease forwards;
+	animation-delay: 0.1s;
+}
+
+.content-sub3 {
+	padding-bottom: 1.5em;
+	padding-top: 1.6em;
+	animation: fadeIn 0.5s ease forwards;
+	animation-delay: 0.2s;
+}
+
+.content-sub4 {
+	padding-bottom: 1.5em;
+	animation: fadeIn 0.5s ease forwards;
+	animation-delay: 0.3s;
 }
 
 @media (max-width: 675px) {
@@ -122,6 +149,8 @@ h1.fade-in::after {
 	background-color: #1c1c1c;
 	color: #fff;
 	font-size: 0.9em;
+	opacity: 0;
+	animation: fadeIn 0.5s ease forwards;
 }
 
 .wave span {
@@ -182,6 +211,10 @@ h1.fade-in::after {
 	justify-content: center;
 	gap: 0.5em;
 	margin-top: 1em;
+	padding-bottom: 0.5em;
+	animation: fadeIn 0.5s ease forwards;
+	opacity: 0;
+	animation-delay: 0.4s;
 }
 
 .icon {
