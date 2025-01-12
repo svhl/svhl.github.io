@@ -46,6 +46,12 @@ h1:hover {
 	letter-spacing: -0.097em;
 }
 
+.hidden {
+	font-family: "Fira Code", serif;
+	opacity: 0;
+	user-select: none;
+}
+
 h1.fade-out {
 	opacity: 0;
 	transition: opacity 0.1s ease;
@@ -127,6 +133,13 @@ h1.fade-in::after {
 	animation-delay: 0.3s;
 }
 
+.footer {
+	text-align: center;
+	background-color: #1c1c1c;
+	color: #fff;
+	font-size: 0.9em;
+}
+
 @media (max-width: 675px) {
 	.content-section {
 		padding-left: 0em;
@@ -142,15 +155,6 @@ h1.fade-in::after {
 		padding: 0.5em 0em;
 		flex: 1;
 	}
-}
-
-.footer {
-	text-align: center;
-	background-color: #1c1c1c;
-	color: #fff;
-	font-size: 0.9em;
-	opacity: 0;
-	animation: fadeIn 0.5s ease forwards;
 }
 
 .wave span {

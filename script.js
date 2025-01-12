@@ -44,7 +44,6 @@ document
 
 const nameText = document.getElementById("nameText");
 
-// Function to toggle text with fade effect on click when screen width is below 675px
 nameText.addEventListener("click", function () {
 	nameText.classList.add("fade-out"); // Add fade-out effect
 
@@ -62,40 +61,3 @@ nameText.addEventListener("click", function () {
 		nameText.classList.add("fade-in"); // Add fade-in effect
 	}, 300); // Matches the duration of the opacity transition (0.3s)
 });
-
-window.onload = () => {
-	// Apply delay when the page loads, specifically for the 'About' tab
-	const aboutTab = document.querySelector(".tab1");
-	if (aboutTab.classList.contains("active")) {
-		setFooterDelay(aboutTab); // Set delay if 'About' tab is active on load
-	}
-};
-
-document.querySelectorAll(".tab").forEach((tab, index) => {
-	tab.addEventListener("click", () => {
-		// Remove any existing animation (reset)
-		const footer = document.querySelector(".footer");
-		footer.style.animation = "none";
-
-		// Force reflow to reset the animation
-		void footer.offsetWidth;
-
-		// Set the delay based on tab clicked
-		setFooterDelay(tab);
-	});
-});
-
-function setFooterDelay(tab) {
-	const footer = document.querySelector(".footer");
-	let delay;
-	if (tab.classList.contains("tab1")) {
-		delay = "0.5s"; // Delay for About tab
-	} else if (tab.classList.contains("tab2")) {
-		delay = "2s"; // Delay for Skills tab
-	} else if (tab.classList.contains("tab3")) {
-		delay = "3s"; // Delay for Projects tab
-	}
-
-	// Apply animation with calculated delay
-	footer.style.animation = `fadeIn 0.5s ease forwards ${delay}`;
-}
