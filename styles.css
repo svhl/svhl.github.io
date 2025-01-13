@@ -4,7 +4,7 @@ body {
 	margin: 0;
 	padding: 0;
 	width: 100%;
-	height: 100vh;
+	min-height: 100vh;
 	color: #1c1c1c;
 	display: flex;
 	flex-direction: column;
@@ -111,23 +111,26 @@ h1.fade-in::after {
 }
 
 .content-sub1 {
-	padding-bottom: 1.5em;
+	padding-bottom: 1em;
 	animation: fadeIn 0.5s ease forwards;
 }
 
 .content-sub2 {
+	padding-top: 0.4em;
+	padding-bottom: 0.8em;
 	animation: fadeIn 0.5s ease forwards;
 	animation-delay: 0.1s;
 }
 
 .content-sub3 {
-	padding-bottom: 1.5em;
-	padding-top: 1.6em;
+	padding-bottom: 1.1em;
+	padding-top: 4.5em;
 	animation: fadeIn 0.5s ease forwards;
 	animation-delay: 0.2s;
 }
 
 .content-sub4 {
+	padding-top: 0.6em;
 	padding-bottom: 1.5em;
 	animation: fadeIn 0.5s ease forwards;
 	animation-delay: 0.3s;
@@ -138,6 +141,20 @@ h1.fade-in::after {
 	background-color: #1c1c1c;
 	color: #fff;
 	font-size: 0.9em;
+}
+
+.material-symbols-outlined {
+	font-size: 50px !important;
+	user-select: none;
+}
+
+.left {
+	transform: rotate(5deg);
+}
+
+.right {
+	transform: rotate(-8deg);
+	float: right;
 }
 
 @media (max-width: 675px) {
