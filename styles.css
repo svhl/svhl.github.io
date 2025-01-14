@@ -4,7 +4,7 @@ body {
 	margin: 0;
 	padding: 0;
 	width: 100%;
-	min-height: 100vh;
+	height: 100%;
 	color: #1c1c1c;
 	display: flex;
 	flex-direction: column;
@@ -12,7 +12,7 @@ body {
 
 .bg {
 	background-image: repeating-radial-gradient(
-			circle at 0 0,
+			circle at 50% 9.5em,
 			transparent 0,
 			#fff 40px
 		),
@@ -113,27 +113,28 @@ h1.fade-in::after {
 .content-sub1 {
 	padding-bottom: 1em;
 	animation: fadeIn 0.5s ease forwards;
+	animation-delay: 0.2s;
 }
 
 .content-sub2 {
 	padding-top: 0.4em;
 	padding-bottom: 0.8em;
 	animation: fadeIn 0.5s ease forwards;
-	animation-delay: 0.1s;
+	animation-delay: 0.4s;
 }
 
 .content-sub3 {
 	padding-bottom: 1.1em;
 	padding-top: 4.5em;
 	animation: fadeIn 0.5s ease forwards;
-	animation-delay: 0.2s;
+	animation-delay: 0.6s;
 }
 
 .content-sub4 {
 	padding-top: 0.6em;
 	padding-bottom: 1.5em;
 	animation: fadeIn 0.5s ease forwards;
-	animation-delay: 0.3s;
+	animation-delay: 0.8s;
 }
 
 .footer {
@@ -141,23 +142,87 @@ h1.fade-in::after {
 	background-color: #1c1c1c;
 	color: #fff;
 	font-size: 0.9em;
+	position: fixed;
+    bottom: 0;
+	width: 100%;
 }
 
 .material-symbols-outlined {
 	font-size: 50px !important;
 	user-select: none;
+	opacity: 0;
 }
 
-.left {
+.symbol1 {
 	transform: rotate(5deg);
+	animation: fadeIn 0.5s ease forwards;
+	animation-delay: 0.3s;
+	position: relative;
+	z-index: 1;
 }
 
-.right {
+.sub-symbol1 {
+	transform: rotate(-5deg);
+	animation: fadeIn 0.5s ease forwards;
+	animation-delay: 0.3s;
+	margin-left: -0.6em;
+	margin-top: -0.18em;
+	font-size: 80px !important;
+	color: #f0f0f0;
+	position: absolute;
+}
+
+.symbol2 {
 	transform: rotate(-8deg);
 	float: right;
+	animation: fadeIn 0.5s ease forwards;
+	animation-delay: 0.5s;
+	position: relative;
+	z-index: 1;
 }
 
-@media (max-width: 675px) {
+.sub-symbol2 {
+	float: right;
+	transform: rotate(8deg);
+	animation: fadeIn 0.5s ease forwards;
+	animation-delay: 0.5s;
+	margin-right: -0.6em;
+	margin-top: -0.18em;
+	font-size: 80px !important;
+	color: #f0f0f0;
+}
+
+.symbol3 {
+	transform: rotate(5deg);
+	animation: fadeIn 0.5s ease forwards;
+	animation-delay: 0.7s;
+	position: relative;
+	z-index: 1;
+}
+
+.sub-symbol3 {
+	transform: rotate(-5deg);
+	animation: fadeIn 0.5s ease forwards;
+	animation-delay: 0.7s;
+	margin-left: -0.6em;
+	margin-top: -0.18em;
+	font-size: 80px !important;
+	color: #f0f0f0;
+	position: absolute;
+}
+
+.social-icons {
+	display: flex;
+	justify-content: center;
+	gap: 1em;
+	margin-top: 1em;
+	padding-bottom: 3.5em;
+	animation: fadeIn 0.5s ease forwards;
+	opacity: 0;
+	animation-delay: 1s;
+}
+
+@media (max-width: 610px) {
 	.content-section {
 		padding-left: 0em;
 		padding-right: 0em;
@@ -171,6 +236,37 @@ h1.fade-in::after {
 	.tab {
 		padding: 0.5em 0em;
 		flex: 1;
+	}
+
+	.content-sub1 {
+		padding-bottom: 0.6em;
+	}
+	
+	.content-sub2 {
+		padding-top: 0em;
+		padding-bottom: 0em;
+		animation: fadeIn 0.5s ease forwards;
+		animation-delay: 0.4s;
+	}
+	
+	.content-sub3 {
+		padding-bottom: 0.5em;
+		padding-top: 4.3em;
+		animation: fadeIn 0.5s ease forwards;
+		animation-delay: 0.6s;
+	}
+	
+	.content-sub4 {
+		padding-top: 0em;
+		padding-bottom: 1.5em;
+		animation: fadeIn 0.5s ease forwards;
+		animation-delay: 0.8s;
+	}
+}
+
+@media (max-width: 360px) {
+	.social-icons {
+		flex-wrap: wrap;
 	}
 }
 
@@ -225,17 +321,6 @@ h1.fade-in::after {
 	100% {
 		transform: translateY(0);
 	}
-}
-
-.social-icons {
-	display: flex;
-	justify-content: center;
-	gap: 0.5em;
-	margin-top: 1em;
-	padding-bottom: 0.5em;
-	animation: fadeIn 0.5s ease forwards;
-	opacity: 0;
-	animation-delay: 0.4s;
 }
 
 .icon {
