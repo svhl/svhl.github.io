@@ -44,7 +44,12 @@ document
 
 const nameText = document.getElementById("nameText");
 
+let isTransitioning = false;
+
 nameText.addEventListener("click", function () {
+	if (isTransitioning) return;
+
+	isTransitioning = true;
 	nameText.classList.add("fade-out"); // Add fade-out effect
 
 	// Wait for the fade-out transition to finish before changing text
@@ -59,5 +64,6 @@ nameText.addEventListener("click", function () {
 
 		nameText.classList.remove("fade-out"); // Remove fade-out effect
 		nameText.classList.add("fade-in"); // Add fade-in effect
+		isTransitioning = false;
 	}, 300); // Matches the duration of the opacity transition (0.3s)
 });

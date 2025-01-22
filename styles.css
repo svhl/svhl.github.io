@@ -281,7 +281,7 @@ h1.fade-in::after {
 	justify-content: left;
 	gap: 0.9em;
 	margin-top: -0.45em;
-	padding-bottom: 0.6em;
+	padding-bottom: 1.4em;
 	animation: fadeIn 0.5s ease forwards;
 	opacity: 0;
 	animation-delay: 0.4s;
@@ -301,46 +301,6 @@ h1.fade-in::after {
 
 .icon img {
   vertical-align: middle; /* Ensures the image is aligned properly inside the container */
-}  
-
-@media (max-width: 659px) {
-	.content-section {
-		padding-left: 0em;
-		padding-right: 0em;
-		max-width: 100%;
-	}
-
-	.container {
-		max-width: 100vw;
-	}
-
-	.content-sub1, .content-sub2, .content-sub3, .content-sub4 {
-		transform: translateX(0em);
-	}
-}
-
-@media (max-width: 460px) {
-	.tab {
-		padding: 0.5em 0em;
-		flex: 1;
-	}
-}
-
-@media (max-width: 386px) {
-	.social-icons {
-		flex-wrap: wrap;
-	}
-}
-
-@media (max-width: 299px) {
-	.tabs {
-		gap: 0.3em;
-		flex-wrap: wrap;
-	}
-
-	.tab {
-		padding: 0.5em 1em;
-	}
 }
 
 .wave span {
@@ -432,6 +392,51 @@ h1.fade-in::after {
 	border-top: 11px solid #1c1c1c;
 }
 
+@media (max-width: 659px) {
+	.content-section {
+		padding-left: 0em;
+		padding-right: 0em;
+		max-width: 100%;
+	}
+
+	.container {
+		max-width: 100vw;
+	}
+
+	.content-sub1, .content-sub2, .content-sub3, .content-sub4, .skills-sub1, .skills-sub2 {
+		transform: translateX(0em);
+	}
+	
+	.skills-sub2, .skills-icons2 {
+		text-align: left;
+		justify-content: left;
+	}
+}
+
+@media (max-width: 460px) {
+	.tab {
+		padding: 0.5em 0em;
+		flex: 1;
+	}
+}
+
+@media (max-width: 386px) {
+	.social-icons {
+		flex-wrap: wrap;
+	}
+}
+
+@media (max-width: 299px) {
+	.tabs {
+		gap: 0.3em;
+		flex-wrap: wrap;
+	}
+
+	.tab {
+		padding: 0.5em 1em;
+	}
+}
+
 @media (max-width: 382px) {
 	.copy-popup {
 		transform: translateX(26px) translateY(-44px);
@@ -440,7 +445,11 @@ h1.fade-in::after {
 
 @media (max-width: 328px) {
 	.social-icons {
-		padding-bottom: 2.8em;
+		padding-bottom: 3.1em;
+	}
+
+	.skills-icons2 {
+		padding-bottom: 3.1em;
 	}
 
 	.footer {
@@ -456,6 +465,10 @@ h1.fade-in::after {
 
 @media (max-width: 209px) {
 	.social-icons {
-		padding-bottom: 3.7em;
+		padding-bottom: 4.2em;
+	}
+
+	.skills-icons2 {
+		padding-bottom: 4.3em;
 	}
 }
