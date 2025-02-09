@@ -246,6 +246,7 @@ h1.fade-in::after {
 
 .symbol3:hover {
 	transform: rotate(-5deg) translateX(-10px);
+	cursor: pointer;
 }
 
 .sub-symbol3 {
