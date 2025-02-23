@@ -51,6 +51,7 @@ nameText.addEventListener("click", function () {
 
 	isTransitioning = true;
 	nameText.classList.add("fade-out"); // Add fade-out effect
+	clickHide.classList.add("fade-out");
 
 	// Wait for the fade-out transition to finish before changing text
 	setTimeout(function () {

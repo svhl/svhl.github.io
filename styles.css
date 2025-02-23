@@ -33,6 +33,8 @@ h1 {
 	margin-bottom: 0.5em;
 	position: relative;
 	transition: opacity 0.3s ease;
+	margin-left: auto;
+    margin-right: auto;
 }
 
 h1:hover {
@@ -174,6 +176,36 @@ h1.fade-in::after {
 	font-size: 50px !important;
 	user-select: none;
 	opacity: 0;
+}
+
+.click {
+	position: absolute;
+	pointer-events: none;
+	opacity: 0;
+	animation: fadeIn 0.2s ease forwards;
+	animation-delay: 1s;
+}
+
+@supports (-webkit-appearance: none) {
+	.click {
+		margin-top: -3.4em;
+		margin-left: 6.8em;
+	}
+}
+  
+@-moz-document url-prefix() {
+	.click {
+		margin-top: -3.5em;
+		margin-left: 7.1em;
+	}
+}
+
+@media (max-width: 328px) {
+	.click {
+		visibility: hidden;
+		margin-top: unset;
+		margin-left: unset;
+	}
 }
 
 .symbol1 {
