@@ -45,6 +45,7 @@ document
 const nameText = document.getElementById("nameText");
 
 let isTransitioning = false;
+let isTransitioningCursor = false;
 
 nameText.addEventListener("click", function () {
 	if (isTransitioning) return;
@@ -70,10 +71,12 @@ nameText.addEventListener("click", function () {
 });
 
 document.getElementById("nameText").addEventListener("click", function () {
+	if (isTransitioningCursor) return;
 	const clickElement = document.querySelector(".click");
 
 	clickElement.style.opacity = "1";
 	clickElement.style.animation = "none"; // Reset any previous animation
 	void clickElement.offsetWidth; // Force reflow to restart animation
 	clickElement.style.animation = "fadeOut 0.1s ease forwards";
+	isTransitioningCursor = true;
 });
