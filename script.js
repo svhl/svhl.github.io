@@ -68,3 +68,12 @@ nameText.addEventListener("click", function () {
 		isTransitioning = false;
 	}, 300); // Matches the duration of the opacity transition (0.3s)
 });
+
+document.getElementById("nameText").addEventListener("click", function () {
+	const clickElement = document.querySelector(".click");
+
+	clickElement.style.opacity = "1";
+	clickElement.style.animation = "none"; // Reset any previous animation
+	void clickElement.offsetWidth; // Force reflow to restart animation
+	clickElement.style.animation = "fadeOut 0.1s ease forwards";
+});

@@ -187,6 +187,18 @@ h1.fade-in::after {
 	animation-delay: 1s;
 }
 
+@keyframes fadeIn {
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeOut {
+	to {
+		opacity: 0;
+	}
+}
+
 @supports (-webkit-appearance: none) {
 	.click {
 		margin-top: -3.4em;
