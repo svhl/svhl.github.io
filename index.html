@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Suhail's Portfolio</title>
+		<link rel="icon" href="./icons/favicon.png" type="image/png" />
+		<link rel="stylesheet" href="styles.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed&family=Jersey+10&family=Fira+Code"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0"
+		/>
+	</head>
+	<body>
+		<div class="bg">
+			<div class="container">
+				<h1 id="nameText">Hi, I'm Suhail!</h2>
+				<img id="clickHide" src="./icons/click.svg" class="click">
+
+				<div class="tabs">
+					<div class="tab active" onclick="showSection('about', this)">
+						About
+					</div>
+					<div class="tab" onclick="showSection('skills', this)">
+						Skills
+					</div>
+					<div class="tab" onclick="showSection('projects', this)">
+						Projects
+					</div>
+				</div>
+
+				<div id="about" class="content">
+					<p class="about-1">I am a computer science student pursuing B.Tech at Rajagiri School of Engineering and Technology with an interest in web design and full-stack development.</p>
+
+					<span class="material-symbols-outlined about-f-1">computer</span>
+					<span class="material-symbols-outlined about-b-1">blur_on</span>
+
+					<p class="about-2">I'm in my third year, but I've been tinkering with code way before that. I love making my ideas come to 
+					<span class="wave">
+						<span>l</span><span>i</span><span>f</span><span>e</span>
+					</span> using technology.</p>
+
+					<span class="material-symbols-outlined about-f-2">data_object</span>
+					<span class="material-symbols-outlined about-b-2">blur_on</span>
+
+					<p class="about-3">I don't have any work experience (yet), so I spend my time building open-source projects, participating in hackathons, and writing technical blogs.</p>
+					<a href="https://www.dev.to/svhl" target="_blank">
+						<img src="./icons/DEV.svg" alt="dev" class="material-symbols-outlined about-f-3">
+						<span class="material-symbols-outlined about-b-3">blur_on</span>
+					</a>
+
+					<p class="about-4">I'm eager to gain hands-on experience through internships to futher develop my skills. Click one of the icons below to reach out to me!<span class="hidden">!</span></p>
+
+					<div class="social-icons">
+						<a href="https://github.com/svhl" target="_blank" class="icon">
+							<img src="./icons/GITHUB.svg" alt="GitHub" width="auto" height="30">
+						</a>
+
+						<a class="icon" id="email-icon">
+							<img src="./icons/EMAIL.svg" alt="Gmail" width="auto" height="30">
+						</a>
+						
+						<div id="copy-popup" class="copy-popup">Copied!</div>
+						<a href="https://www.linkedin.com/in/svhyl" target="_blank" class="icon">
+							<img src="./icons/LINKEDIN.svg" alt="LinkedIn" width="auto" height="30">
+						</a>
+					</div>
+				</div>
+
+				<div id="skills" class="content">
+					<p class="skills-1">I am familiar with...</p>
+					<div class="skills-icons-1">
+						<img src="./icons/NODE.svg" width="auto" height="30">
+						<img src="./icons/SQL.svg" width="auto" height="30">
+						<img src="./icons/TAILWINDCSS.svg" width="auto" height="30">
+						<img src="./icons/PYTHON.svg" width="auto" height="30">
+						<img src="./icons/LINUX.svg" width="auto" height="30">
+						<img src="./icons/GIT.svg" width="auto" height="30">
+					</div>
+					<p class="skills-2">I am currently learning...</p>
+					<div class="skills-icons-2">
+						<img src="./icons/FIREBASE.svg" width="auto" height="30">
+					</div>
+				</div>
+				
+				<div id="projects" class="content">
+					<p class="projects-h projects-h-1">
+						Rajagiri Event Management System<br />
+						<span class="projects-links">
+							<a href="https://github.com/svhl/rems" target="_blank">GitHub</a> | 
+							<a href="https://rems.hopto.org" target="_blank">Website</a>
+						</span>
+					</p>
+					<img src="./thumbnails/rems.webp" alt="Rajagiri Event Management System" class="projects-img projects-img-1">
+					<p class="projects-b projects-b-1">Simplify event management and activity points tracking for students and teachers at Rajagiri. Utilizes responsive UI design and CRUD operations. The site may take ~1 min to load.</p>
+
+					<p class="projects-h projects-h-2">
+						EcoSync<br />
+						<span class="projects-links">
+							<a href="https://github.com/svhl/ecosync" target="_blank">GitHub</a> | 
+							<a href="https://ecosync-jgwp.onrender.com" target="_blank">Website</a>
+						</span>
+					</p>
+					<img src="./thumbnails/ecosync.webp" alt="EcoSync" class="projects-img projects-img-2">
+					<p class="projects-b projects-b-2">A B2B platform for connecting industries to optimize resource usage, reduce waste, and promote circular economy principles. Developed during HackS'US Edition IV.</p>
+
+					<p class="projects-h projects-h-3">
+						VisiLearn<br />
+						<span class="projects-links">
+							<a href="https://github.com/svhl/visilearn" target="_blank">GitHub</a>
+						</span>
+					</p>
+					<img src="./thumbnails/visilearn.webp" alt="VisiLearn" class="projects-img projects-img-3">
+					<p class="projects-b projects-b-3">An all-in-one learning platform for the visually impaired with easy-to-use voice and shortcut navigation. Implemented API calls and a keyboard-centric interface.</p>
+
+					<p class="projects-f">More on <a href="https://github.com/svhl?tab=repositories" target="_blank">GitHub</a></p>
+				</div>
+			</div>
+
+			<footer class="footer">
+				<p>Designed by Muhammed S. Suhail &copy; <span id="current-year"></span></p>
+			</footer>
+			
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
