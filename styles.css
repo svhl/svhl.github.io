@@ -18,6 +18,7 @@ body {
 		),
 		repeating-linear-gradient(#f4f4f4, #fff);
 	flex-grow: 1;
+	height: 100vh;
 }
 
 .container {
@@ -265,19 +266,20 @@ a:visited {
 }
 
 .projects-img {
-	transform: translateX(1.4em);
+	transform: translateX(1.45em);
 	width: 100%;
 	max-width: 600px;
 	height: auto;
 	display: block;
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
+	/*padding-top: 0.5em;
+	padding-bottom: 0.5em;*/
 	opacity: 0;
 	animation: fadeIn 0.5s ease forwards;
 }
 
 .projects-b {
 	transform: translateX(-1.4em);
+	padding-top: 15px;
 	padding-bottom: 1em;
 	animation: fadeIn 0.5s ease forwards;
 }
@@ -301,6 +303,7 @@ a:visited {
 }
 
 .projects-img-1 {
+	box-shadow: 10px 10px #d8a75c;
 	animation-delay: 0.3s;
 }
 
@@ -313,6 +316,7 @@ a:visited {
 }
 
 .projects-img-2 {
+	box-shadow: 10px 10px #22c55e;
 	animation-delay: 0.6s;
 }
 
@@ -325,6 +329,7 @@ a:visited {
 }
 
 .projects-img-3 {
+	box-shadow: 10px 10px #3c825b;
 	animation-delay: 0.9s;
 }
 
@@ -503,7 +508,7 @@ about-b-* is background icon
 	padding: 0 1em;
 	text-align: center;
 	color: #121011;
-	opacity: 0.5;
+	opacity: 0.7;
 	font-size: 0.9em;
 	bottom: 0;
 	width: 100%;
