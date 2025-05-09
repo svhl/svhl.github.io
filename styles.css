@@ -18,7 +18,7 @@ body {
 		),
 		repeating-linear-gradient(#f4f4f4, #fff);
 	flex-grow: 1;
-	height: 100vh;
+	height: 35em;
 }
 
 .container {
@@ -357,10 +357,6 @@ about-b-* is background icon
 	z-index: 1;
 }
 
-.about-f-1:hover {
-	transform: rotate(-5deg) translateX(-10px);
-}
-
 .about-b-1 {
 	transform: rotate(-5deg);
 	animation-delay: 0.3s;
@@ -371,20 +367,12 @@ about-b-* is background icon
 	position: absolute;
 }
 
-.about-f-1:hover + .about-b-1 {
-	transform: rotate(5deg) translateX(10px);
-}
-
 .about-f-2 {
 	transform: rotate(-8deg);
 	float: right;
 	animation-delay: 0.5s;
 	position: relative;
 	z-index: 1;
-}
-
-.about-f-2:hover {
-	transform: rotate(8deg) translateX(10px);
 }
 
 .about-b-2 {
@@ -397,10 +385,6 @@ about-b-* is background icon
 	color: #f0f0f0;
 }
 
-.about-f-2:hover + .about-b-2 {
-	transform: rotate(-8deg) translateX(-10px);
-}
-
 .about-f-3 {
 	transform: rotate(5deg);
 	animation-delay: 0.7s;
@@ -408,11 +392,6 @@ about-b-* is background icon
 	z-index: 1;
 	width: 42px;
 	height: 42px;
-}
-
-.about-f-3:hover {
-	transform: rotate(-5deg) translateX(-10px);
-	cursor: pointer;
 }
 
 .about-b-3 {
@@ -425,8 +404,31 @@ about-b-* is background icon
 	position: absolute;
 }
 
-.about-f-3:hover + .about-b-3 {
-	transform: rotate(5deg) translateX(10px);
+@media (hover: hover) and (pointer: fine) {
+	.about-f-1:hover {
+		transform: rotate(-5deg) translateX(-10px);
+	}
+
+	.about-f-1:hover + .about-b-1 {
+		transform: rotate(5deg) translateX(10px);
+	}
+
+	.about-f-2:hover {
+		transform: rotate(8deg) translateX(10px);
+	}
+
+	.about-f-2:hover + .about-b-2 {
+		transform: rotate(-8deg) translateX(-10px);
+	}
+
+	.about-f-3:hover {
+		transform: rotate(-5deg) translateX(-10px);
+		cursor: pointer;
+	}
+
+	.about-f-3:hover + .about-b-3 {
+		transform: rotate(5deg) translateX(10px);
+	}
 }
 
 .icon {
@@ -530,6 +532,18 @@ about-b-* is background icon
 	.projects-img {
 		max-width: 300px;
 		margin: 0 auto;
+	}
+
+	.projects-img-1 {
+		box-shadow: 7px 7px #d8a75c;
+	}
+
+	.projects-img-2 {
+		box-shadow: 7px 7px #22c55e;
+	}
+
+	.projects-img-3 {
+		box-shadow: 7px 7px #3c825b;
 	}
 
 	.container {
