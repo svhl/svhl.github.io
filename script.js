@@ -61,7 +61,7 @@ nameText.addEventListener("click", function () {
 	// Wait for the fade-out transition to finish before changing text
 	setTimeout(function () {
 		if (nameText.innerText === "Hi, I'm Suhail!") {
-			nameText.innerText = "Hi, I'm svhl!"; // Change text on click
+			nameText.innerText = "hi, i'm svhl!"; // Change text on click
 			nameText.classList.add("fira-code");
 		} else {
 			nameText.innerText = "Hi, I'm Suhail!"; // Revert text on another click
