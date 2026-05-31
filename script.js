@@ -1,28 +1,124 @@
 // Show default section (About) on load
 document.addEventListener("DOMContentLoaded", () => {
 	showSection("about", document.querySelector(".tab.active"));
+	
+	// Remove initial-load class after animation completes
+	setTimeout(() => {
+		document.getElementById("nameText").classList.remove("initial-load");
+	}, 700); // 200ms delay + 500ms animation
 });
 
-// Show the selected section and highlight the active tab
-function showSection(sectionId, tabElement) {
-	// Hide all sections
+function animateFooter() {
+	const footer = document.querySelector(".footer");
+	if (!footer) return;
+
+	footer.style.opacity = "0";
+	footer.style.animation = "none";
+	void footer.offsetWidth; // Force reflow so the same animation can restart
+	footer.style.animation = "fadeIn 0.5s ease forwards";
+	footer.style.animationDelay = "0.4s";
+}
+
+function renderSection(sectionId, tabElement) {
+	// Hide all sections first so only one tab panel is visible.
 	document.querySelectorAll(".content").forEach((section) => {
 		section.style.display = "none";
 	});
 
-	// Display selected section
 	const selectedSection = document.getElementById(sectionId);
-	selectedSection.style.display = "block";
+	if (selectedSection) {
+		selectedSection.style.display = "block";
+	}
 
 	document.querySelectorAll(".tab").forEach((tab) => {
-		// Scroll to top when a tab is clicked
-		tab.addEventListener("click", () => {
-			window.scrollTo(0, 0);
-		});
-		// Update active tab styling
 		tab.classList.remove("active");
 	});
-	tabElement.classList.add("active");
+
+	if (tabElement) {
+		tabElement.classList.add("active");
+	}
+
+	configureFooterMessage();
+	animateFooter();
+}
+
+function scrollToTopFast(onComplete) {
+	const startY = window.scrollY;
+
+	if (startY <= 0) {
+		onComplete();
+		return;
+	}
+
+	const duration = 180;
+	const startTime = performance.now();
+
+	const step = (currentTime) => {
+		const elapsed = currentTime - startTime;
+		const progress = Math.min(elapsed / duration, 1);
+		const easedProgress = 1 - Math.pow(1 - progress, 3);
+
+		window.scrollTo(0, startY * (1 - easedProgress));
+
+		if (progress < 1) {
+			requestAnimationFrame(step);
+			return;
+		}
+
+		onComplete();
+	};
+
+	requestAnimationFrame(step);
+}
+
+function configureFooterMessage() {
+	const defaultFooter = document.getElementById("footer-default");
+	const hoverTipFooter = document.getElementById("footer-hover-tip");
+	const usesPointerCursor = window.matchMedia("(pointer: fine)").matches;
+	const showHoverTip = usesPointerCursor && Math.random() < 0.25; // 25% chance to show the hover tip
+
+	if (!defaultFooter || !hoverTipFooter) {
+		return;
+	}
+
+	defaultFooter.hidden = showHoverTip;
+	hoverTipFooter.hidden = !showHoverTip;
+}
+
+let tabSwitchRequestId = 0;
+
+// Show the selected section and highlight the active tab
+function showSection(sectionId, tabElement) {
+	const selectedSection = document.getElementById(sectionId);
+	const isSelectedSectionVisible = selectedSection?.style.display === "block";
+
+	if (tabElement?.classList.contains("active") && isSelectedSectionVisible) {
+		return;
+	}
+
+	tabSwitchRequestId += 1;
+	const requestId = tabSwitchRequestId;
+
+	const completeTabSwitch = () => {
+		if (requestId !== tabSwitchRequestId) {
+			return;
+		}
+
+		renderSection(sectionId, tabElement);
+	};
+
+	if (window.scrollY <= 0) {
+		completeTabSwitch();
+		return;
+	}
+
+	scrollToTopFast(() => {
+		if (requestId !== tabSwitchRequestId) {
+			return;
+		}
+
+		completeTabSwitch();
+	});
 }
 
 // Update the year in the footer
