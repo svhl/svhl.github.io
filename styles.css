@@ -154,7 +154,7 @@ h1.fade-in::after {
 .content::after {
 	content: "";
 	position: absolute;
-	top: -100vh;
+	top: 0;
 	bottom: 0;
 	width: max(0px, calc((100vw - 100%) / 2));
 	pointer-events: none;
@@ -167,9 +167,9 @@ h1.fade-in::after {
 		560px 454px,
 		470px 798px;
 	background-position:
-		17px 31px,
-		123px 57px,
-		41px 141px;
+		17px calc(31px - 100svh),
+		123px calc(57px - 100svh),
+		41px calc(141px - 100svh);
 	background-repeat: repeat, repeat, repeat;
 	z-index: -1;
 }
@@ -236,8 +236,7 @@ h1.fade-in::after {
 		);
 }
 
-.about-highlight-red::after,
-.projects-link-highlight-redpen::after {
+.about-highlight-red::after {
 	background-image:
 		radial-gradient(140% 120% at 0% 90%, #e77a6c 0 24%, transparent 25%),
 		radial-gradient(140% 120% at 22% 10%, #d24836 0 24%, transparent 25%),
@@ -256,9 +255,11 @@ h1.fade-in::after {
 		);
 }
 
-.about-1-text:hover .about-highlight::after,
-.about-3-text:hover .about-highlight::after {
-	opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+	.about-1-text:hover .about-highlight::after,
+	.about-3-text:hover .about-highlight::after {
+		opacity: 1;
+	}
 }
 
 .about-2 {
@@ -362,59 +363,22 @@ projects-b-* is body
 	padding-bottom: 0.5em;
 }
 
-.projects-h-link {
-	text-decoration-line: none;
+.projects-title-row {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4em;
 }
 
-.projects-link-highlight-cdcs,
-.projects-link-highlight-redpen {
-	position: relative;
-	display: inline-block;
-	color: #121011;
+.projects-title-row a {
+    display: inline-flex;
+    align-items: center;
 }
 
-.projects-link-highlight-cdcs::after,
-.projects-link-highlight-redpen::after {
-	content: attr(data-text);
-	position: absolute;
-	inset: 0;
-	background-size: 170% 170%;
-	background-position: 50% 50%;
-	background-clip: text;
-	-webkit-background-clip: text;
-	color: transparent;
-	-webkit-text-fill-color: transparent;
-	opacity: 0;
-	transition: opacity 0.3s ease;
-	pointer-events: none;
-}
-
-.projects-link-highlight-cdcs::after {
-	background-image:
-		radial-gradient(140% 120% at 0% 90%, #7a74f0 0 24%, transparent 25%),
-		radial-gradient(140% 120% at 22% 10%, #4f47e6 0 24%, transparent 25%),
-		radial-gradient(140% 120% at 46% 88%, #a6a2f8 0 24%, transparent 25%),
-		radial-gradient(140% 120% at 70% 18%, #3429c9 0 24%, transparent 25%),
-		radial-gradient(140% 120% at 94% 82%, #655dea 0 24%, transparent 25%),
-		repeating-linear-gradient(
-			105deg,
-			#7a74f0 0 14%,
-			#4f47e6 14% 28%,
-			#a6a2f8 28% 42%,
-			#3429c9 42% 56%,
-			#655dea 56% 70%,
-			#4f47e6 70% 84%,
-			#a6a2f8 84% 100%
-		);
-}
-
-.projects-h-link:hover .projects-link-highlight-cdcs::after,
-.projects-h-link:hover .projects-link-highlight-redpen::after {
-	opacity: 1;
-}
-
-.projects-h-link:visited {
-	color: #121011;
+.projects-mini-icon {
+	display: block;
+	width: 0.95em;
+	height: 0.95em;
+	flex: 0 0 auto;
 }
 
 .projects-img {
